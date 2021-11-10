@@ -44,4 +44,29 @@ public class MyTriangle {
         }
         else{return answer.SCALENE.name();}
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+
+        if(!(obj instanceof MyTriangle)) return false;
+
+        MyTriangle myTriangle = (MyTriangle) obj;//делаем downcast
+
+        return this.v1.equals(myTriangle.v1)
+                && this.v2.equals(myTriangle.v2)
+                && this.v3.equals(myTriangle.v3);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;//пишем простое число
+
+        result = 31*result+v1.hashCode();
+        result = 31*result+v2.hashCode();
+        result = 31*result+v3.hashCode();
+
+        return result;
+
+    }
 }

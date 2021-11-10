@@ -1,5 +1,7 @@
 package com.mycompany.figures;
 
+import com.mycompany.book.Author;
+
 public class Circle {
 
     private double radius=1.0;
@@ -43,5 +45,32 @@ public class Circle {
 
     public double getArea(){
         return Math.PI * Math.pow(radius,2);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+
+        if(!(obj instanceof Circle)) return false;
+
+        Circle circle = (Circle) obj;//делаем downcast
+
+        double epsilon =5.96e-08;
+
+
+        return Math.abs(this.radius/circle.radius-1) < epsilon
+                && this.color.equals(circle.color);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;//пишем простое число
+
+        result = 31*result+ (int)(Double.doubleToLongBits(radius)^(Double.doubleToLongBits(radius)>>>32)) ;
+        result = 31*result+color.hashCode();
+
+
+        return result;
+
     }
 }

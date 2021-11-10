@@ -40,4 +40,31 @@ public class Container {
                 "),(" + x2 +
                 "," + y2 + ")]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+
+        if(!(obj instanceof Container)) return false;
+
+        Container container = (Container) obj;//делаем downcast
+
+        return this.x1==container.x1
+                && this.x2 == container.x2
+                && this.y1==container.y1
+                && this.y2 == container.y2;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;//пишем простое число
+
+        result = 31 * result + x1;
+        result = 31 * result + x2;
+        result = 31 * result + y1;
+        result = 31 * result + y2;
+
+
+        return result;
+    }
 }

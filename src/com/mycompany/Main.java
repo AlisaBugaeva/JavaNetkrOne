@@ -107,6 +107,56 @@ public class Main {
         System.out.println(p4);
         MyPolynomial p5 = new MyPolynomial(-2,-5,1);
         System.out.println(p5);
+        System.out.println("=========================================");
+
+        Ball b2 = new Ball(10,12,2,3,-45);
+        Ball b3 = new Ball(10,12,2,3,-45);
+        System.out.println(b3.equals(b2));
+
+        Container cont1 = new Container(2,3,4,5);
+        Container cont2 = new Container(2,3,4,5);
+        System.out.println(cont1.equals(cont2));
+        System.out.println(b3.hashCode());
+        System.out.println(b2.hashCode());
+
+        Author n4 = new Author("Tom", "tom@mail.ru", 'm');
+        System.out.println(n4.equals(n1));
+        System.out.println(n1.hashCode());
+        System.out.println(n4.hashCode());
+
+        Book book2 = new Book("Hollywood",280.5,12,n1,n2,n3);
+        Book book3 = new Book("Hollywood",280.5,12,n1,n2,n3);
+        System.out.println(book3.equals(book2));
+        System.out.println(book3.hashCode());
+        System.out.println(book2.hashCode());
+
+        Circle circle1 = new Circle(2.5,"red");
+        Circle circle2 = new Circle(2.5,"red");
+        System.out.println(circle1.equals(circle2));
+        System.out.println(circle1.hashCode());
+        System.out.println(circle2.hashCode());
+
+        MyPoint point1 = new MyPoint(1,5);
+        MyPoint point2 = new MyPoint(1,5);
+        System.out.println(point1.equals(point2));
+        System.out.println(point1.hashCode());
+        System.out.println(point2.hashCode());
+
+        MyTriangle tr1 = new MyTriangle(point1,point2,c);
+        MyTriangle tr2 = new MyTriangle(point1,point2,c);
+        System.out.println(tr1.equals(tr2));
+        System.out.println(tr1.hashCode());
+        System.out.println(tr2.hashCode());
+
+        MyComplex complex1 = new MyComplex(2.5, -1.3);
+        MyComplex complex2 = new MyComplex(2.5, -1.3);
+        System.out.println(complex1.equals(complex2));
+        System.out.println(complex1.hashCode());
+        System.out.println(complex2.hashCode());
+
+
+
+
 
 
     }

@@ -1,5 +1,7 @@
 package com.mycompany.maths;
 
+import com.mycompany.figures.MyPoint;
+
 public class MyComplex {
     private double real = 0.0;
     private double imag = 0.0;
@@ -59,9 +61,37 @@ public class MyComplex {
         return this.real == real && this.imag == imag;
     }
 
-    public boolean equals(MyComplex another){
+   /* public boolean equals(MyComplex another){
         return this.real == another.getReal() && this.imag == another.getImag();
+    }*/
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+
+        if(!(obj instanceof MyComplex)) return false;
+
+        MyComplex myComplex = (MyComplex) obj;//делаем downcast
+
+        double epsilon =5.96e-08;
+
+
+        return Math.abs(this.real/myComplex.real-1) < epsilon
+                && Math.abs(this.imag/myComplex.imag-1) < epsilon;
     }
+
+    @Override
+    public int hashCode() {
+        int result = 17;//пишем простое число
+
+        result = 31*result+ (int)(Double.doubleToLongBits(real)^(Double.doubleToLongBits(real)>>>32)) ;
+        result = 31*result+ (int)(Double.doubleToLongBits(imag)^(Double.doubleToLongBits(imag)>>>32)) ;
+
+
+        return result;
+
+    }
+
 
     public double magnitude(){
         return Math.sqrt(Math.pow(this.real,2)+Math.pow(this.imag,2));
@@ -119,6 +149,7 @@ public class MyComplex {
         conj.imag=-this.imag;
         return conj;
     }
+
 
 
 

@@ -23,4 +23,30 @@ public class Author {
     public String getName() {
         return name;
     }
+
+       @Override
+    public boolean equals(Object obj) {
+        if(this==obj) return true;
+
+        if(!(obj instanceof Author)) return false;
+
+        Author author = (Author) obj;//делаем downcast
+
+        return this.name.equals(author.name)
+                && this.email.equals(author.email)
+                && this.gender==author.gender;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;//пишем простое число
+
+        result = 31*result+(int)gender;
+        result = 31*result+name.hashCode();
+        result = 31*result+email.hashCode();
+
+
+        return result;
+
+    }
 }
