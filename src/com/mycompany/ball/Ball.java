@@ -88,7 +88,6 @@ public class Ball {
 
        double epsilon =5.96e-08;
 
-
        return Math.abs(this.x/ball.x-1) < epsilon
                && Math.abs(this.y/ball.y-1) < epsilon
                && this.radius==ball.radius

@@ -45,7 +45,6 @@ public class Author {
         result = 31*result+name.hashCode();
         result = 31*result+email.hashCode();
 
-
         return result;
 
     }

@@ -64,7 +64,6 @@ public class Container {
         result = 31 * result + y1;
         result = 31 * result + y2;
 
-
         return result;
     }
 }

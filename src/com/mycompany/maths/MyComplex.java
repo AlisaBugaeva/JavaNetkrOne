@@ -65,6 +65,7 @@ public class MyComplex {
         return this.real == another.getReal() && this.imag == another.getImag();
     }*/
 
+
     @Override
     public boolean equals(Object obj) {
         if(this==obj) return true;

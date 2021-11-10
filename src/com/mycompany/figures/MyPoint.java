@@ -69,7 +69,6 @@ public class MyPoint {
 
         double epsilon =5.96e-08;
 
-
         return Math.abs(this.x/myPoint.x-1) < epsilon
                 && Math.abs(this.y/myPoint.y-1) < epsilon;
     }

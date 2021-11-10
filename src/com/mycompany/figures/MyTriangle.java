@@ -58,6 +58,7 @@ public class MyTriangle {
                 && this.v3.equals(myTriangle.v3);
     }
 
+
     @Override
     public int hashCode() {
         int result = 17;//пишем простое число

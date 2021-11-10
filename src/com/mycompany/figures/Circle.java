@@ -57,7 +57,6 @@ public class Circle {
 
         double epsilon =5.96e-08;
 
-
         return Math.abs(this.radius/circle.radius-1) < epsilon
                 && this.color.equals(circle.color);
     }
